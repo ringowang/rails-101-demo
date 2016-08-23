@@ -7,11 +7,10 @@ class PostsController < ApplicationController
       @post = @group.posts.new
    end
 
-   def edit
-      @post = current_user.posts.find(params[:id])
-   end
+
 
    def create
+   
       @post = @group.posts.build(post_params)
       @post.author = current_user
 
@@ -20,6 +19,10 @@ class PostsController < ApplicationController
       else
          render :new
       end
+   end
+   
+   def edit
+      @post = current_user.posts.find(params[:id])
    end
 
    def update

@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'carrierwave' 
+gem "paperclip", "~> 5.0.0"
+gem 'rmagick'
 
 gem 'bootstrap-sass'
 

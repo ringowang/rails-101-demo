@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+
 	validates :content, presence: true
 	scope :recent, -> { order("updated_at DESC") }
 	

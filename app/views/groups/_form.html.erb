@@ -1,7 +1,15 @@
+<!-- 这个表格是用来给edit和new引用的，因为两者表格形式相同 -->
+
 <%= simple_form_for group do |f| %>
 	<div class="form-group">
 		<%= f.input :title, input_html: { class: "form-control"} %>
 		<%= f.input :description, input_html: { class: "form-control"} %>
 	</div>
+	<!-- 下面这一段添加了一个上传文件bottom -->
+	<p>
+		<label>My Image</label>
+		<%= f.file_field :image %>
+	</p>
+	
 	<%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>
 <% end %>

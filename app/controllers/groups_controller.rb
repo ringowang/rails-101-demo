@@ -20,6 +20,7 @@ class GroupsController < ApplicationController
 
 	def create
 		@group = current_user.groups.create(group_params)
+		#@group.image = params[:file]
 
 		if @group.save
 			current_user.join!(@group)
@@ -74,6 +75,6 @@ class GroupsController < ApplicationController
 	private
 
 	def group_params
-		params.require(:group).permit(:title, :description)
+		params.require(:group).permit(:title, :description, :image)
 	end
 end
