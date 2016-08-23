@@ -74,6 +74,7 @@ class GroupsController < ApplicationController
 
 	private
 
+	#这里添加了image
 	def group_params
 		params.require(:group).permit(:title, :description, :image)
 	end
