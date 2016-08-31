@@ -1,6 +1,6 @@
 <div class="col-md-12">
 	<div class="group">
-		<%= link_to("Neww group", new_group_path, class: "btn btn-primary pull-right") %>
+		<%= link_to("New group", new_group_path, class: "btn btn-primary pull-right") %>
 		
 	</div>
 	<table class="table table-hover">
@@ -16,10 +16,11 @@
 				<tr>
 					<td>#</td>
 					<td>  <%= link_to(truncate(group.title, length: 15 ), group_path(group)) %> </td>
-					<%= image_tag group.image_url(:thumb).to_s %>
+
+					
 					<td><%= group.description %></td>
-					
-					
+					<!-- 这句话用来显示图片 -->
+					<td><%= image_tag group.image_url(:thumb).to_s %></td>
 					<td>
 						<% if group.editable_by?(current_user) %>
 							<%= link_to("Edit", edit_group_path(group), class: "btn btn-sm btn-default")%>
