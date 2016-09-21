@@ -1,8 +1,8 @@
 class Group < ActiveRecord::Base
 	validates :title, presence: true
-	
+
 	#上传图片
-	mount_uploader :image, ImageUploader
+	#mount_uploader :image, ImageUploader
 
 	has_many :posts, dependent: :destroy
 	belongs_to :owner, class_name: "User", foreign_key: :user_id
